@@ -1,12 +1,12 @@
 import { Header } from "../../components/Header";
-import { Player } from "../../components/Player";
+import { PlayerView } from "../../components/PlayerView";
 import { Container } from "./styles";
 
 export function Home() {
   return (
     <Container>
       <Header />
-      <Player />
+      <PlayerView />
     </Container>
   );
 }
