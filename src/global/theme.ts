@@ -43,7 +43,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body, input, text, button {
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Inter', sans-serif;
         font-weight: 400;
 
     }

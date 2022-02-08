@@ -1,10 +1,10 @@
-import WaitingCastImg from "../../assets/standby.svg";
 import { Container } from "./styles";
 
 export function ImagePlayer() {
+  const imgUrl = undefined;
   return (
     <Container>
-      <img src={WaitingCastImg} alt="Espaço" />
+      {imgUrl ? <img src="" alt="Espaço" /> : <div className="emptyImg" />}
       <p>
         Selecione um <br />
         podcast para ouvir

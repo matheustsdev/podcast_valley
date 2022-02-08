@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.aside`
   width: 30%;
   height: 100vh;
   padding: 3rem 0;
@@ -14,9 +14,9 @@ export const Container = styled.div`
   color: white;
 `;
 
-export const TitlePlayer = styled.div`
+export const PlayerTitle = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
 
   width: 100%;

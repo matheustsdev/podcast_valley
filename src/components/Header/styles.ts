@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  width: 70%;
+  width: 100%;
   height: 6.5rem;
   padding: 0 4rem;
   background-color: var(--shape);
@@ -12,6 +12,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--line);
 `;
 
 export const LogoMark = styled.div`
