@@ -1,4 +1,13 @@
+import { InputHTMLAttributes } from "react";
 import styled from "styled-components";
+
+interface StyledRangeProps extends InputHTMLAttributes<Range> {
+  position?: number;
+}
+
+interface StyledDisabledProps {
+  disabled: boolean;
+}
 
 export const Container = styled.div`
   width: 282px;
@@ -14,33 +23,48 @@ export const PlayButton = styled.button`
   justify-content: center;
   align-items: center;
   background-color: #9164fa;
-  opacity: 0.7;
   width: 4rem;
   height: 4rem;
   border: none;
   border-radius: 1rem;
 
   svg {
-    opacity: 0.7;
     font-size: 1rem;
     color: white;
   }
 `;
 
-export const TimerControl = styled.div`
+export const PauseButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--purple-dark);
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 1rem;
+
+  svg {
+    font-size: 1.75rem;
+    color: white;
+  }
+`;
+
+export const TimerControl = styled.div<StyledDisabledProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   width: 282px;
-  opacity: 0.7;
 
   font-size: 0.875rem;
   font-family: "inter";
   color: var(--text-body-3);
+
+  opacity: ${(props) => (props.disabled ? 0.7 : 1)};
 `;
 
-export const AudioTrack = styled.input`
+export const AudioTrack = styled.input<StyledRangeProps>`
   -webkit-appearance: none;
   background: #9f75ff;
   width: 174px;
@@ -66,7 +90,7 @@ export const AudioTrack = styled.input`
     border: ${(props) => (props.disabled ? "none" : "4px solid #04d361")};
     background: ${(props) => (props.disabled ? "transparent" : "white")};
     position: relative;
-    z-index: 10;
+    z-index: 3;
   }
 
   /** FF*/
@@ -86,20 +110,21 @@ export const AudioTrack = styled.input`
 
   &:after {
     content: "";
-    width: ${(props) => Number(props.value) * 1.74}px;
+    width: ${(props) => (props.position ? props.position * 174 : 0)}px;
     height: 4px;
     position: absolute;
     background: #04d361;
     align-self: center;
-    overflow: hidden;
-    z-index: 0;
+    z-index: 1;
   }
 `;
 
-export const ButtonsContainer = styled.div`
+export const ButtonsContainer = styled.div<StyledDisabledProps>`
   width: 256px;
   display: flex;
   justify-content: space-around;
+  opacity: ${(props) => (props.disabled ? 0.7 : 1)};
+
   button {
     border: none;
   }
@@ -107,7 +132,6 @@ export const ButtonsContainer = styled.div`
   .audioControl {
     background: transparent;
     color: white;
-    opacity: 0.7;
     font-size: 1rem;
   }
 `;

@@ -17,7 +17,7 @@ export const Container = styled.header`
 
 export const LogoMark = styled.div`
   width: 450px;
-
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;

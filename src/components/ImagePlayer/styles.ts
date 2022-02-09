@@ -24,6 +24,9 @@ export const Container = styled.div`
     width: 18.5rem;
     height: 21.625rem;
     border-radius: 1.5rem;
+    object-fit: cover ;
+
+    object-position: center;
 
   }
 `;

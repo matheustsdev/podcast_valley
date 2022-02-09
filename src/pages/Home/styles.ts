@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 export const Content = styled.main`
   display: flex;
   flex-direction: column;
+  padding: 0 2rem;
 
   .lastPosts {
     display: flex;
@@ -18,7 +19,6 @@ export const Content = styled.main`
 
     width: 100%;
   }
-  padding: 0 4rem;
 
   h1 {
     margin-top: 2rem;

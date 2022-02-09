@@ -1,7 +1,11 @@
 import { FaPlay } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useEpisodes } from "../../hook/useEpisodes";
+import { episodeDateFormatter, timeFormatter } from "../../utils/formatters";
 import { Container } from "./styles";
 
 export function CastTable() {
+  const { episodes, handleActiveEpisode } = useEpisodes();
   return (
     <Container>
       <thead>
@@ -14,48 +18,29 @@ export function CastTable() {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <img src="https://source.unsplash.com/random/40x40?sig=1" alt="" />{" "}
-            A vida é boa
-          </td>
-          <td>Tiago,Diego e Pellizzetti</td>
-          <td>8 Jan 21</td>
-          <td>1:35:18</td>
-          <td>
-            <button>
-              <FaPlay />
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="https://source.unsplash.com/random/40x40?sig=2" alt="" />{" "}
-            A vida é boa
-          </td>
-          <td>Tiago,Diego e Pellizzetti</td>
-          <td>8 Jan 21</td>
-          <td>1:35:18</td>
-          <td>
-            <button>
-              <FaPlay />
-            </button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <img src="https://source.unsplash.com/random/40x40?sig=3" alt="" />{" "}
-            A vida é boa
-          </td>
-          <td>Tiago,Diego e Pellizzetti</td>
-          <td>8 Jan 21</td>
-          <td>1:35:18</td>
-          <td>
-            <button>
-              <FaPlay />
-            </button>
-          </td>
-        </tr>
+        {episodes.map((episode) => (
+          <tr key={episode.id}>
+            <td>
+              <Link to={`description?${episode.id}`} className="link">
+                <img
+                  src={episode.thumbnail}
+                  alt={`Banner do episódio: ${episode.title}`}
+                />
+                {episode.title}
+              </Link>
+            </td>
+            <td className="members">{episode.members}</td>
+            <td className="date">
+              {episodeDateFormatter(episode.published_at)}
+            </td>
+            <td>{timeFormatter(episode.file.duration)}</td>
+            <td>
+              <button onClick={() => handleActiveEpisode(episode.id)}>
+                <FaPlay />
+              </button>
+            </td>
+          </tr>
+        ))}
       </tbody>
     </Container>
   );

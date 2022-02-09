@@ -2,10 +2,26 @@ import styled from "styled-components";
 
 export const Container = styled.table`
   width: 100%;
-
   border-collapse: collapse;
+
   & tr {
     border-bottom: 1px solid var(--line);
+
+    .date {
+      width: 6rem;
+    }
+
+    .members {
+      width: 12rem;
+    }
+
+    .link {
+      all: none;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--title-heading);
+    }
   }
 
   th {
@@ -20,16 +36,16 @@ export const Container = styled.table`
 
   td {
     font-family: "Inter";
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     line-height: 17px;
     color: var(--text-body);
 
-    padding: 0.75rem 0;
+    padding: 0.75rem 0.125rem;
 
     &:first-child {
       font-family: "Lexend";
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 0.875rem;
       color: black;
 
       display: flex;
@@ -41,6 +57,9 @@ export const Container = styled.table`
         height: 2.5rem;
         background: #eee;
         border-radius: 0.5rem;
+
+        object-fit: cover;
+        object-position: center;
 
         margin-right: 1rem;
       }

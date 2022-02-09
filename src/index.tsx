@@ -1,11 +1,20 @@
-import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
+import { GlobalStyle } from "./global/theme";
+import { EpisodesProvider } from "./hook/useEpisodes";
+import { Description } from "./pages/Description";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <EpisodesProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<App />} path="/" />
+        <Route element={<Description />} path="description" />
+      </Routes>
+    </BrowserRouter>
+    <GlobalStyle />
+  </EpisodesProvider>,
   document.getElementById("root")
 );
 

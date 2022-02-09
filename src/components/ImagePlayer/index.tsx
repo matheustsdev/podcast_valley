@@ -1,14 +1,22 @@
+import { useEpisodes } from "../../hook/useEpisodes";
 import { Container } from "./styles";
 
 export function ImagePlayer() {
-  const imgUrl = undefined;
+  const { activeEpisode } = useEpisodes();
+
   return (
     <Container>
-      {imgUrl ? <img src="" alt="Espaço" /> : <div className="emptyImg" />}
-      <p>
-        Selecione um <br />
-        podcast para ouvir
-      </p>
+      {activeEpisode.id ? (
+        <img src={activeEpisode.thumbnail} alt="Espaço" />
+      ) : (
+        <>
+          <div className="emptyImg" />
+          <p>
+            Selecione um <br />
+            podcast para ouvir
+          </p>
+        </>
+      )}
     </Container>
   );
 }
