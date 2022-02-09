@@ -20,6 +20,9 @@ export const Container = styled.div`
 
     border-radius: 0.75rem;
     border: none;
+
+    object-fit: cover;
+    object-position: center;
   }
 
   button {
@@ -29,7 +32,8 @@ export const Container = styled.div`
     border: 1px solid var(--line);
     border-radius: 0.625rem;
 
-    margin: 2.5rem 0 0 2rem;
+    position: relative;
+    top: 1.5rem;
 
     svg {
       color: var(--green);
