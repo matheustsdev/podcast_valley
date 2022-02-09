@@ -1,6 +1,8 @@
 # Podcast Valley
 
-This is a application of a podcast site, with custom audio player and list of all episodes.
+This is a application of a podcast site, with custom audio player and list of all episodes to listen any episode directly for the site.
+
+This application is made with functional components and two pages: Home, which has the episode list and the audio player, and the Description page, with the description of the episode, option to start audio and other information.
 
 ## Screenshots
 
