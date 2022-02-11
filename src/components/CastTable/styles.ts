@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.table`
   width: 100%;
+
   border-collapse: collapse;
 
   & tr {
@@ -77,5 +78,15 @@ export const Container = styled.table`
         font-size: 0.75rem;
       }
     }
+  }
+
+  thead,
+  tbody {
+    display: block;
+  }
+
+  tbody {
+    overflow-y: scroll;
+    height: 35vh;
   }
 `;

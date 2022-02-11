@@ -96,6 +96,7 @@ export function AudioController() {
         onTimeUpdate={() => {
           updateAudioTime();
         }}
+        onLoadedData={() => handleTooglePlay()}
       >
         No momento, o navegador não é capaz de iniciar um audio.
       </audio>

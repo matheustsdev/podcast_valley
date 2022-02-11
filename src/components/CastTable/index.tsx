@@ -6,6 +6,7 @@ import { Container } from "./styles";
 
 export function CastTable() {
   const { episodes, handleActiveEpisode } = useEpisodes();
+
   return (
     <Container>
       <thead>
